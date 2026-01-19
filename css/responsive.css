@@ -1,0 +1,343 @@
+/* =====================================================
+   Bjerkelund Grunnarbeid - Responsive Styles
+   ===================================================== */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+    /* Typography */
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation */
+    .nav {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+
+    .header__cta {
+        display: block;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero__title {
+        font-size: 3rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.375rem;
+    }
+
+    /* Introduction */
+    .intro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .intro__content {
+        order: 1;
+    }
+
+    .intro__image {
+        order: 2;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Service Area */
+    .service-area {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Service Detail */
+    .service-detail__container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-detail__content {
+        order: 1;
+    }
+
+    .service-detail__image {
+        order: 2;
+    }
+
+    .service-detail--reverse .service-detail__content {
+        order: 2;
+    }
+
+    .service-detail--reverse .service-detail__image {
+        order: 1;
+    }
+
+    /* About Page */
+    .about-intro {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .equipment-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .local-section__areas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact Section */
+    .contact-section {
+        grid-template-columns: 1fr 1.2fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Footer */
+    .footer__grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+    /* Section Spacing */
+    .section {
+        padding: var(--spacing-xxl) 0;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Hero */
+    .hero__title {
+        font-size: 3.5rem;
+    }
+
+    .hero__container {
+        padding: var(--spacing-xxl) var(--spacing-md);
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Values Grid */
+    .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Local Section Areas */
+    .local-section__areas {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    /* Hero */
+    .hero__content {
+        max-width: 750px;
+    }
+
+    .hero__title {
+        font-size: 4rem;
+    }
+
+    /* Navigation */
+    .nav__list {
+        gap: var(--spacing-xl);
+    }
+
+    /* Services Grid - 5 columns for homepage */
+    .services-grid--home {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide non-essential elements */
+    .header,
+    .mobile-nav,
+    .quick-contact,
+    .cta-section,
+    .footer,
+    .btn {
+        display: none !important;
+    }
+
+    /* Reset colors for print */
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #000;
+    }
+
+    /* Remove shadows and decorations */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Add URLs after links */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    /* Page breaks */
+    .section {
+        page-break-inside: avoid;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --color-border: #000;
+    }
+
+    .btn--secondary {
+        border-width: 3px;
+    }
+
+    .service-card,
+    .benefit-item,
+    .value-card {
+        border: 2px solid var(--color-text);
+    }
+}
+
+/* Dark Mode Support (optional - can be expanded) */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles here if needed in future */
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn {
+        min-height: 48px;
+    }
+
+    .nav__link {
+        padding: var(--spacing-sm);
+    }
+
+    .form-control {
+        min-height: 48px;
+    }
+
+    /* Remove hover effects that don't work on touch */
+    .service-card:hover,
+    .benefit-item:hover,
+    .value-card:hover {
+        transform: none;
+    }
+}
+
+/* Small Mobile (320px - 374px) */
+@media (max-width: 374px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+    }
+
+    .hero__buttons .btn {
+        width: 100%;
+    }
+
+    .cta-section__buttons {
+        flex-direction: column;
+    }
+
+    .cta-section__buttons .btn {
+        width: 100%;
+    }
+
+    .service-area__list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero__container {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .page-hero {
+        padding: var(--spacing-lg) 0;
+    }
+}
